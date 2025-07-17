@@ -1,1 +1,42 @@
-# wedding-countdown
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Monument Grotesk Mono', monospace;
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.2;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="countdown">Loading countdown...</div>
+  <script>
+    var targetDate = new Date("September 4, 2025 17:00:00").getTime();
+    setInterval(function() {
+      var now = new Date().getTime();
+      var distance = targetDate - now;
+      var element = document.getElementById("countdown");
+      if (distance > 0) {
+        var d = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var s = Math.floor((distance % (1000 * 60)) / 1000);
+        element.innerHTML = d + " days " + h + " hours " + m + " minutes " + s + " seconds ";
+      } else {
+        var e = now - targetDate;
+        var d = Math.floor(e / (1000 * 60 * 60 * 24));
+        var h = Math.floor((e % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var m = Math.floor((e % (1000 * 60 * 60)) / (1000 * 60));
+        var s = Math.floor((e % (1000 * 60)) / 1000);
+        element.innerHTML = "MARRIED!<br>Married for " + d + " days " + h + " hours " + m + " minutes " + s + " seconds ";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
