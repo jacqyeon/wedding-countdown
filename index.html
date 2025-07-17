@@ -8,14 +8,33 @@
       font-family: 'Monument Grotesk Mono', monospace;
       font-size: 0.9rem;
       font-weight: 300;
-      line-height: 1.2;
+      line-height: 1.6;
       text-align: center;
-      padding: 10px;
+      padding: 20px;
+    }
+
+    #date {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    #label {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+
+    #countdown {
+      font-size: 1.3rem;
+      font-weight: 400;
     }
   </style>
 </head>
 <body>
+  <div id="date">[Sept 4, 2025]</div>
+  <div id="label">Marriage Begins in</div>
   <div id="countdown">Loading countdown...</div>
+
   <script>
     var targetDate = new Date("September 4, 2025 17:00:00").getTime();
     setInterval(function() {
